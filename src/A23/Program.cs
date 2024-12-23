@@ -5,6 +5,4 @@ using A23;
 var baseDir = Environment.GetEnvironmentVariable("AOC_BaseDir");
 
 var data = File.ReadAllLines(Path.Combine(baseDir!, "A23.data.txt"));
-
-var count = Solution.Solve('t', data);
-Console.WriteLine(count);
+Solution.Solve(data);
