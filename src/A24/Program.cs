@@ -23,6 +23,15 @@ y02: 0
 x00 AND y00 -> z00
 x01 XOR y01 -> z01
 x02 OR y02 -> z02
+
+
+Swaps
+: hjm, mcq
+: z12, djg
+: z19, sbg
+: z37, dsd
+
+djg,dsd,hjm,mcq,sbg,z12,z19,z37
  */
 
 using System.Collections;
@@ -31,12 +40,13 @@ using System.Numerics;
 var baseDir = Environment.GetEnvironmentVariable("AOC_BaseDir");
 var data = File.ReadAllLines(Path.Combine(baseDir!, "A24.data.txt"));
 var graph = Path.Combine(baseDir!, "A24.dot");
-
+var computer2 = new Dictionary<string, List<(string reg, string lhs, string op, string rhs)>>();
+    
 var values = data.Where(d => d.Contains(':'))
     .Select(d => d.Split(':'))
     .ToDictionary(d => d[0], d => Int32.Parse(d[1]));
 
-var computer = new Dictionary<string, (string lhs, string op, string rhs)>();
+var computer = new Dictionary<string, (string reg, string lhs, string op, string rhs)>();
 var queue = new Queue<(string reg, string lhs, string op, string rhs)>();
 foreach (var d in data.Where(d => d.Contains("->")))
 {
@@ -60,12 +70,28 @@ foreach (var d in data.Where(d => d.Contains("->")))
     };
     
     queue.Enqueue((reg, l, op, r));
-    computer[reg] = (l, op, r);
+    computer[reg] = (reg, l, op, r);
+    
+    if (!computer2.TryGetValue(l, out var ll))
+    {
+        ll = [];
+        computer2.Add(l, ll);
+    }
+    
+    ll.Add((reg, l, op, r));
+    
+    if (!computer2.TryGetValue(r, out var rr))
+    {
+        rr = [];
+        computer2.Add(r, rr);
+    }
+    
+    rr.Add((reg, l, op, r));
 }
 
 foreach (var v in values)
 {
-    computer[v.Key] = ("0", v.Value == 0 ? "&" : "|", "1");
+    computer[v.Key] = ("i", "0", v.Value == 0 ? "&" : "|", "1");
 }
 
 while (queue.TryDequeue(out var d))
@@ -101,10 +127,62 @@ Console.WriteLine(Solution.Bin(z));
 
 //Solution.Graph(graph, computer);
 //Solution.Print(computer);
-Solution.Analyse(computer);
+//Solution.Analyse(computer);
+Solution.Analyse2(computer2);
+
 
 public static class Solution
 {
+    public static void Analyse2(Dictionary<string, List<(string reg, string lhs, string op, string rhs)>> computer)
+    {
+        var reg = "kmb";
+        for (var idx = 2; idx < 45; ++idx)
+        {
+            var xIn = $"x{idx:D2}";
+            var yIn = $"y{idx:D2}";
+            var xAndY = computer[xIn].Where(o => o.op == "&").ToList();
+            var xXorY = computer[xIn].Where(o => o.op == "^").ToList();
+            var regOr = computer[reg].Where(o => o.op == "|").ToList();
+            
+            if (xAndY.Count != 1) { Console.WriteLine("0"); }
+            if (xAndY[0].lhs != xIn || xAndY[0].rhs != yIn) { Console.WriteLine("1"); }
+            
+            if (xXorY.Count != 1) { Console.WriteLine($"2: {xIn} XOR {yIn}"); }
+            if (xXorY[0].lhs != xIn || xXorY[0].rhs != yIn) { Console.WriteLine("3"); }
+            
+            if (regOr.Count != 1) { Console.WriteLine("4"); }
+
+            var xyXorXor = computer[xXorY[0].reg].Where(o => o.op == "^").ToList();
+            var xyXorAnd = computer[xXorY[0].reg].Where(o => o.op == "&").ToList();
+            
+            if (xyXorXor.Count != 1) { Console.WriteLine($"5: {xIn}"); }
+            if (xyXorAnd.Count != 1) { Console.WriteLine($"6: {xIn}"); }
+            
+            var regOrXor = computer[regOr[0].reg].Where(o => o.op == "^").ToList();
+            var regOrAnd = computer[regOr[0].reg].Where(o => o.op == "&").ToList();
+            
+            if (regOrXor.Count != 1) { Console.WriteLine($"5: {xIn}"); }
+            if (regOrAnd.Count != 1) { Console.WriteLine($"6: {xIn}"); }
+            
+            if (regOrXor[0].reg != xyXorXor[0].reg) { Console.WriteLine($"7:{xIn}"); }
+            if (regOrAnd[0].reg != xyXorAnd[0].reg) { Console.WriteLine($"8:{xIn}"); }
+            
+            if (regOrXor[0].reg[0] != 'z') { Console.WriteLine($"9:{xIn}");
+                break;
+            }
+        
+            reg = regOrAnd[0].reg;
+            
+            var xyXorAndOr = computer[xyXorAnd[0].reg].Where(o => o.op == "|").ToList();
+            if (xyXorAndOr.Count != 1) { Console.WriteLine($"10: {xIn}"); }
+            
+            var xAndYOr = computer[xAndY[0].reg].Where(o => o.op == "|").ToList();
+            if (xAndYOr.Count != 1) { Console.WriteLine("11"); }
+            if (xAndYOr[0].reg != xyXorAndOr[0].reg) { Console.WriteLine($"12: {xIn}"); }
+        }
+        
+    }
+    
     public static BigInteger ToVal(char z, Dictionary<string, int> v)
     {
         BigInteger result = 0L;
