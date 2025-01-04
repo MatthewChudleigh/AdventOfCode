@@ -1,21 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Reactive.Linq;
+using System.Reactive.Threading.Tasks;
+using Common;
+
 var baseDir = Environment.GetEnvironmentVariable("AOC_2015_DATA")!;
 var dataPath = Path.Combine(baseDir, "A01.txt");
-var data = File.ReadAllText(dataPath);
+var fs = (new FileCharObservable(dataPath));
 
-var floor = 0;
-var basement = 0;
-var position = 0;
-foreach (var c in data)
-{
-    position++;
-    floor += c == '(' ? 1 : -1;
-    
-    if (floor == -1 && basement == 0)
-    {
-        basement = position;
-    }
-}
+var step = await 
+    fs.Scan((step: 0, floor: 0), 
+    (i, c) => c == '(' 
+        ? (i.step + 1, i.floor + 1) 
+        : (i.step + 1, i.floor - 1)
+    ).Aggregate((basement: 0, floor: 0), 
+        (s, i) => 
+            (s.basement == 0 && i.floor == -1 ? i.step : s.basement, i.floor))
+    .ToTask();
 
-Console.WriteLine(floor);
-Console.WriteLine(basement);
+Console.WriteLine(step.floor);
+Console.WriteLine(step.basement);
