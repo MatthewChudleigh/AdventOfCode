@@ -14,35 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A05", "src\A2024\A05\A05.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A08", "src\A2024\A08\A08.csproj", "{3CE89BDD-6CDA-4D45-959E-33AEA4DADC3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{554919E5-47C0-45E6-8002-766C70B33930}"
-	ProjectSection(SolutionItems) = preProject
-		data\A20.test.txt = data\A20.test.txt
-		data\A23.test.txt = data\A23.test.txt
-		data\A23.data.txt = data\A23.data.txt
-		data\A23.test.1.txt = data\A23.test.1.txt
-		data\A23.test.2.txt = data\A23.test.2.txt
-		data\A24.test.txt = data\A24.test.txt
-		data\A24.data.txt = data\A24.data.txt
-		data\A22.data.txt = data\A22.data.txt
-		data\A22.test.txt = data\A22.test.txt
-		data\A24.inputs.txt = data\A24.inputs.txt
-		data\A24.ops.txt = data\A24.ops.txt
-		data\A24.dot = data\A24.dot
-		data\A25.data.txt = data\A25.data.txt
-		data\A25.test.txt = data\A25.test.txt
-		data\A24.data.orig.txt = data\A24.data.orig.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A08", "A08", "{8DF30024-8E54-47B7-892C-46F35B2659AA}"
-	ProjectSection(SolutionItems) = preProject
-		data\A08\A08.test.txt = data\A08\A08.test.txt
-		data\A08\A08.test-1.txt = data\A08\A08.test-1.txt
-		data\A08\A08.test-2.txt = data\A08\A08.test-2.txt
-		data\A08\A08.test-3.txt = data\A08\A08.test-3.txt
-		data\A08\A08.1.txt = data\A08\A08.1.txt
-		data\A08\A08.test-4.txt = data\A08\A08.test-4.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A06", "src\A2024\A06\A06.csproj", "{CECC6A39-D05F-46CF-84F3-A5BE64A18415}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A07", "src\A2024\A07\A07.csproj", "{28339704-F473-401B-B14E-7B26994FACA6}"
@@ -55,24 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A08.Test", "test\A2024\A08.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A09", "src\A2024\A09\A09.csproj", "{81747D78-5DF8-4F32-B9DB-F80136C18B71}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A09", "A09", "{BBF41223-A3B8-4DA1-B596-2FC6D9B6B27E}"
-	ProjectSection(SolutionItems) = preProject
-		data\A09.test-0.txt = data\A09.test-0.txt
-		data\A09.data.txt = data\A09.data.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A10", "src\A2024\A10\A10.csproj", "{8992EBC0-C39D-4DF9-AA48-3ADC345EAA1A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A10", "A10", "{70DBFF21-BE99-41BF-8BE7-9965638671BD}"
-	ProjectSection(SolutionItems) = preProject
-		data\A10.test-1.txt = data\A10.test-1.txt
-		data\A10.test-2.txt = data\A10.test-2.txt
-		data\A10.data.txt = data\A10.data.txt
-		data\A10.test-0.txt = data\A10.test-0.txt
-		data\A11.data.txt = data\A11.data.txt
-		data\A13.test.txt = data\A13.test.txt
-		data\A13.test-2.txt = data\A13.test-2.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A10.Test", "test\A2024\A10.Test\A10.Test.csproj", "{6A474261-0D66-41BA-B5A8-9C32BAB178E6}"
 EndProject
@@ -84,20 +38,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A12", "src\A2024\A12\A12.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A12.Test", "test\A2024\A12.Test\A12.Test.csproj", "{6B7E8EEF-D204-4670-87EC-CD99CF86E89A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A12", "A12", "{854693E9-DB22-4040-9CDD-40673F7CF2B4}"
-	ProjectSection(SolutionItems) = preProject
-		data\A12.data.txt = data\A12.data.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A13", "src\A2024\A13\A13.csproj", "{49963D5E-E7D1-474E-A00C-4F4F4A1EAE16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A14", "src\A2024\A14\A14.csproj", "{FF52E5DD-E78D-4052-B1FF-B15F0A4C584B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A14", "A14", "{6CB416B2-85E6-45D1-82BE-205D5272F1C6}"
-	ProjectSection(SolutionItems) = preProject
-		data\A14.test.txt = data\A14.test.txt
-		data\A14.test-1.txt = data\A14.test-1.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A15", "src\A2024\A15\A15.csproj", "{C2A90AAD-EEF9-4B16-8567-5EDF956F83E3}"
 EndProject
@@ -107,38 +50,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A16", "src\A2024\A16\A16.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A16.Test", "test\A2024\A16.Test\A16.Test.csproj", "{F7160E62-C74E-47EA-BED3-06F2523362FC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A16", "A16", "{B987E79B-85F8-4317-86FC-853AD3B35E40}"
-	ProjectSection(SolutionItems) = preProject
-		data\A16.data.txt = data\A16.data.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A17", "src\A2024\A17\A17.csproj", "{0A473D0C-3328-42A0-9187-CC5DD1140E7D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A17", "A17", "{B1138943-E367-43FA-AC91-4BDD38F91C1F}"
-	ProjectSection(SolutionItems) = preProject
-		data\A17.data.txt = data\A17.data.txt
-		data\A17.test.txt = data\A17.test.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A17.Test", "test\A2024\A17.Test\A17.Test.csproj", "{9865E9B8-C73A-45C5-A949-CA1600118F32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A18", "src\A2024\A18\A18.csproj", "{3E3ADB19-B6D3-4D6B-83BB-9AA47CC598D5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A18", "A18", "{44724D01-F0EF-4DA3-93E4-2E7EEFC9F380}"
-	ProjectSection(SolutionItems) = preProject
-		data\A18.data.txt = data\A18.data.txt
-		data\A18.test.txt = data\A18.test.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A19", "src\A2024\A19\A19.csproj", "{EB595794-F2DB-4647-AB63-7ADA3455BD9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A19.Test", "test\A2024\A19.Test\A19.Test.csproj", "{4B601965-44DC-424F-8CD6-D90982A33A19}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A19", "A19", "{F0CF9980-A586-413E-9861-02E3175DDA98}"
-	ProjectSection(SolutionItems) = preProject
-		data\A19.data.txt = data\A19.data.txt
-		data\A20.data.txt = data\A20.data.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A20", "src\A2024\A20\A20.csproj", "{D9B5C8BA-F2F5-471B-9F1D-14E3D77913C3}"
 EndProject
@@ -159,6 +79,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A2024", "A2024", "{A241038F-0A94-4E2E-9AD9-B168C3B251A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A2015", "A2015", "{509886DE-C411-4B94-A7FD-FB467F523098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A2015_A01", "src\A2015\A2015_A01\A2015_A01.csproj", "{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -305,18 +227,13 @@ Global
 		{3893D924-99D1-4A57-8B85-62E9F03ACB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3893D924-99D1-4A57-8B85-62E9F03ACB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3893D924-99D1-4A57-8B85-62E9F03ACB30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8DF30024-8E54-47B7-892C-46F35B2659AA} = {554919E5-47C0-45E6-8002-766C70B33930}
 		{72C6B6AC-9B77-4258-ABF7-CA2C8D6C119B} = {E62E181F-C6A0-45FD-A219-CFE0A8A33B06}
-		{BBF41223-A3B8-4DA1-B596-2FC6D9B6B27E} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{70DBFF21-BE99-41BF-8BE7-9965638671BD} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{854693E9-DB22-4040-9CDD-40673F7CF2B4} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{6CB416B2-85E6-45D1-82BE-205D5272F1C6} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{B987E79B-85F8-4317-86FC-853AD3B35E40} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{B1138943-E367-43FA-AC91-4BDD38F91C1F} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{44724D01-F0EF-4DA3-93E4-2E7EEFC9F380} = {554919E5-47C0-45E6-8002-766C70B33930}
-		{F0CF9980-A586-413E-9861-02E3175DDA98} = {554919E5-47C0-45E6-8002-766C70B33930}
 		{C8BA1076-102D-4EAB-AEAC-AFD9AB4A69BD} = {E62E181F-C6A0-45FD-A219-CFE0A8A33B06}
 		{9F1632EF-6920-481E-B12C-B41F42361C5C} = {C8BA1076-102D-4EAB-AEAC-AFD9AB4A69BD}
 		{31569E30-2285-4745-8D95-217C2AD508AC} = {C8BA1076-102D-4EAB-AEAC-AFD9AB4A69BD}
@@ -353,5 +270,6 @@ Global
 		{4B601965-44DC-424F-8CD6-D90982A33A19} = {A241038F-0A94-4E2E-9AD9-B168C3B251A0}
 		{B1E2D554-F3A9-4309-9DED-74EAC5D867AE} = {A241038F-0A94-4E2E-9AD9-B168C3B251A0}
 		{509886DE-C411-4B94-A7FD-FB467F523098} = {E62E181F-C6A0-45FD-A219-CFE0A8A33B06}
+		{5E254D0E-A3E5-4793-93A1-CB8D7A04EF8A} = {509886DE-C411-4B94-A7FD-FB467F523098}
 	EndGlobalSection
 EndGlobal
