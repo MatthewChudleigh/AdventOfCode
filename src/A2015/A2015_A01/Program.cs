@@ -1,22 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Reactive.Linq;
-using System.Reactive.Threading.Tasks;
+﻿using System.Reactive.Linq;
 using Common;
+
+var floorTask = new TaskCompletionSource<int>();
+var basementTask = new TaskCompletionSource<int>();
 
 var baseDir = Environment.GetEnvironmentVariable("AOC_2015_DATA")!;
 var dataPath = Path.Combine(baseDir, "A01.txt");
-var fs = (new FileCharObservable(dataPath));
+var fs = (new FileCharObservable(dataPath))
+    .Select(c => (c == '(' ? 1 : -1))
+    .Scan((position: 0, floor: 0), (agg, data) => (agg.position + 1, floor: agg.floor + data))
+    .Publish();
 
-var step = await 
-    fs.Scan((step: 0, floor: 0), 
-    (i, c) => c == '(' 
-        ? (i.step + 1, i.floor + 1) 
-        : (i.step + 1, i.floor - 1)
-    ).Aggregate((basement: 0, floor: 0), 
-        (s, i) => 
-            (s.basement == 0 && i.floor == -1 ? i.step : s.basement, i.floor))
-    .ToTask();
+using var s1 = fs.LastOrDefaultAsync()
+    .Select(x => x.floor)
+    .Subscribe(floorTask.SetResult);
+using var s2 = fs.FirstAsync(x => x.floor == -1)
+    .Select(x => x.position)
+    .Subscribe(basementTask.SetResult);
 
-Console.WriteLine(step.floor);
-Console.WriteLine(step.basement);
+fs.Connect();
+
+await Task.WhenAll(floorTask.Task, basementTask.Task);
+
+Console.WriteLine(floorTask.Task.Result);
+Console.WriteLine(basementTask.Task.Result);
