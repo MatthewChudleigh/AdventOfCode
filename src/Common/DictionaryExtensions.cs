@@ -8,7 +8,7 @@ public static class DictionaryExtensions
     {
         if (!dictionary.TryGetValue(key, out var set))
         {
-            set = new();
+            set = [];
             dictionary[key] = set;
         }
         set.Add(value);

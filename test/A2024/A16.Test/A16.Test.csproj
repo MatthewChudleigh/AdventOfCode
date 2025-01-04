@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\A10\A10.csproj" />
+    <ProjectReference Include="..\..\..\src\A2024\A16\A16.csproj" />
   </ItemGroup>
 
 </Project>
