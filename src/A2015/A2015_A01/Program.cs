@@ -1,11 +1,15 @@
-﻿using System.Reactive.Linq;
+﻿using System;
+using System.IO;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
 using Common;
+
+var baseDir = Environment.GetEnvironmentVariable("AOC_2015_DATA")!;
+var dataPath = Path.Combine(baseDir, "A01.txt");
 
 var floorTask = new TaskCompletionSource<int>();
 var basementTask = new TaskCompletionSource<int>();
 
-var baseDir = Environment.GetEnvironmentVariable("AOC_2015_DATA")!;
-var dataPath = Path.Combine(baseDir, "A01.txt");
 var fs = (new FileCharObservable(dataPath))
     .Select(c => (c == '(' ? 1 : -1))
     .Scan((position: 0, floor: 0), (agg, data) => (agg.position + 1, floor: agg.floor + data))
